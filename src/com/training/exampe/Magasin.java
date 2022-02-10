@@ -39,6 +39,11 @@ public class Magasin {
         this.setStock(livre);
     }
 
+    public void ajouterCd(String nom, float prixAchat, float prixVente, String auteur, String interprete) {
+        Cd cd = new Cd(nom, prixAchat, prixVente, auteur, interprete);
+        this.setStock(cd);
+    }
+
     public void acheterProduit(int referenceProduit, int quantiteProduit) {
         try {
             Produit produit = this.stock.get(referenceProduit);
