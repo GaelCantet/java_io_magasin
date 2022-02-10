@@ -19,8 +19,10 @@ public class Magasin {
         this.bilan -= value;
     }
 
-    public List<Produit> getStock() {
-        return stock;
+    public void displayStock() {
+        for (Produit i : this.stock) {
+            System.out.println(i);
+        }
     }
 
     public void setStock(Produit produit) {
@@ -30,6 +32,11 @@ public class Magasin {
     public void ajouterProduit(String nom, float prixAchat, float prixVente) {
         Produit produit = new Produit(nom, prixAchat, prixVente);
         this.setStock(produit);
+    }
+
+    public void ajouterLivre(String nom, float prixAchat, float prixVente, String auteur, String editeur) {
+        Livre livre = new Livre(nom, prixAchat, prixVente, auteur, editeur);
+        this.setStock(livre);
     }
 
     public void acheterProduit(int referenceProduit, int quantiteProduit) {

@@ -8,7 +8,8 @@ public class Main {
         magasin.ajouterProduit("truc", 20f, 30f);
         magasin.acheterProduit(0, 10);
         magasin.vendreProduit(0, 8);
-        System.out.println(magasin.getStock());
+        magasin.ajouterLivre("hello world", 10f, 15f, "machin", "bidule");
+        magasin.displayStock();
         System.out.println(magasin.getBilan());
     }
 }
