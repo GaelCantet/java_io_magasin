@@ -7,10 +7,15 @@ public class Produit {
     private float prixAchat;
     private float prixVente;
 
-    public void Produit(String nom, float prixAchat, float prixVente) {
+    public Produit(String nom, float prixAchat, float prixVente) {
         this.nom = nom;
         this.prixAchat = prixAchat;
         this.prixVente = prixVente;
+    }
+
+    @Override
+    public String toString() {
+        return this.getNom() + ",  " + this.getDescription() + ", prix d'achat: " + this.getPrixAchat() + ", prix de vente: " + this.getPrixVente() + ", quantité: " + this.getQuantite();
     }
 
     public String getNom() {
@@ -29,8 +34,12 @@ public class Produit {
         return quantite;
     }
 
-    public void setQuantite(int quantite) {
-        this.quantite = quantite;
+    public void augmenterQuantite(int value) {
+        this.quantite += value;
+    }
+
+    public void diminuerQuantite(int value) {
+        this.quantite -= value;
     }
 
     public String getDescription() {
